@@ -1,0 +1,23 @@
+{
+    "name": "Custom Theme Color",
+    "description": "Configure and adjust the theme-color meta property of pages automatically",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "icons": {
+        "128": "icons/ctcicon.png"
+    },
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "browser_action": {
+        "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*", "file://*/*"],
+            "runs_at": "document_start",
+            "js": ["content-scripts/theme_changer.js"]
+        }
+    ]
+}
